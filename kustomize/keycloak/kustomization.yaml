@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: gitopsdemo-dev
 
 resources:
-- keycloak.yaml
+  - keycloak.yaml
