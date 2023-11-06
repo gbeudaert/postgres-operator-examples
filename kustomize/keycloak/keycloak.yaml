@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: keycloak
-  namespace: postgres-operator
+  namespace: gitopsdemo-dev
   labels:
     app.kubernetes.io/name: keycloak
 spec:
@@ -22,15 +22,15 @@ spec:
         - name: DB_VENDOR
           value: "postgres"
         - name: DB_ADDR
-          valueFrom: { secretKeyRef: { name: keycloakdb-pguser-keycloakdb, key: host } }
+          valueFrom: { secretKeyRef: { name: kind-terraform-learn-pguser-kind-terraform-learn, key: host } }
         - name: DB_PORT
-          valueFrom: { secretKeyRef: { name: keycloakdb-pguser-keycloakdb, key: port } }
+          valueFrom: { secretKeyRef: { name: kind-terraform-learn-pguser-kind-terraform-learn, key: port } }
         - name: DB_DATABASE
-          valueFrom: { secretKeyRef: { name: keycloakdb-pguser-keycloakdb, key: dbname } }
+          valueFrom: { secretKeyRef: { name: kind-terraform-learn-pguser-kind-terraform-learn, key: dbname } }
         - name: DB_USER
-          valueFrom: { secretKeyRef: { name: keycloakdb-pguser-keycloakdb, key: user } }
+          valueFrom: { secretKeyRef: { name: kind-terraform-learn-pguser-kind-terraform-learn, key: user } }
         - name: DB_PASSWORD
-          valueFrom: { secretKeyRef: { name: keycloakdb-pguser-keycloakdb, key: password } }
+          valueFrom: { secretKeyRef: { name: kind-terraform-learn-pguser-kind-terraform-learn, key: password } }
         - name: KEYCLOAK_ADMIN
           value: "admin"
         - name: KEYCLOAK_ADMIN_PASSWORD
